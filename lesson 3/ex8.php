@@ -9,11 +9,13 @@ foreach ($arr as $key => $value){
     echo $key . ':' . $br;
     if (is_array($value)){
         foreach ($value as $city) {
-            if ($city == end($value)){
-                echo $city;
-            } else{
-                echo $city . ', ';
-            }
+           if (mb_substr($city, 0, 1, "UTF-8") === 'К'){
+               if ($city == end($value)){
+                   echo $city;
+               } else{
+                   echo $city . ', ';
+               }
+           }
         };
         echo $br;
     }
